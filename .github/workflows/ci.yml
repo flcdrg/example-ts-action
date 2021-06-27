@@ -23,9 +23,8 @@ jobs:
         with:
           milliseconds: 1000
 
-      - name: Git Commit on Workflow
+      - name: Git Commit/Push Changes
         if: ${{ github.ref != 'refs/heads/main' }} # only on branch
-        uses: matheusalbino/git-commit@v1.0.1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          message: Update dist
+        uses: actions-x/commit@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
