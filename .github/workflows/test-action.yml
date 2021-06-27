@@ -21,7 +21,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Example TypeScript Action
 
-      uses: flcdrg/example-ts-action@v1.0.0
+      uses: flcdrg/example-ts-action@v1
+      id: thing
       with:
         # input description here
         milliseconds: 1000
+
+    - name: Result
+      run: echo ${{ steps.thing.outputs.time }}
