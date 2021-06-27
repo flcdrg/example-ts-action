@@ -16,12 +16,10 @@ jobs:
       - run: |
           npm run all
 
-      - name: Git Commit/Push Changes
+      - name: Git Auto Commit
         if: ${{ github.ref != 'refs/heads/main' }} # only on branch
-        uses: actions-x/commit@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                    
+        uses: stefanzweifel/git-auto-commit-action@v4.11.0
+
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
