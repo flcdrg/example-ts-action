@@ -18,7 +18,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Example TypeScript Action
 
-      uses: flcdrg/example-ts-action@v1.2
+      uses: flcdrg/example-ts-action@v1.3
       id: thing
       with:
         # input description here
