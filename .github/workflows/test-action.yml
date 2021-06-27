@@ -28,4 +28,4 @@ jobs:
         milliseconds: 1000
 
     - name: Result
-      run: echo ${{ steps.thing.outputs.time }}
+      run: echo "${{ steps.thing.outputs.time }}"
