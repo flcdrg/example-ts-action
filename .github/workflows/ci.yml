@@ -17,8 +17,8 @@ jobs:
           npm run all
 
       - name: Git Auto Commit
-        # only on branch, not dependabot
-        if: ${{ github.ref != 'refs/heads/main' && github.actor != 'dependabot[bot]' }}
+        # only on main (won't work on branch as dependabot doesn't get token to commit)
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: stefanzweifel/git-auto-commit-action@v4.11.0
 
   test: # make sure the action works on a clean machine without building
