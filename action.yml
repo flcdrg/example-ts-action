@@ -1,5 +1,8 @@
 name: 'Example TypeScript Action'
 description: 'A simple TypeScript GitHub Action'
+branding:
+  icon: code
+  color: blue
 author: 'flcdrg'
 inputs:
   milliseconds: # change this
