@@ -46,7 +46,7 @@ function run() {
             core.debug(new Date().toTimeString());
             yield wait_1.wait(parseInt(ms, 10));
             core.debug(new Date().toTimeString());
-            core.setOutput('time', new Date().toTimeString());
+            core.setOutput('v1.0 time', new Date().toTimeString());
         }
         catch (error) {
             core.setFailed(error.message);
