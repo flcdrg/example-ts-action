@@ -12,12 +12,6 @@ jobs:
       - run: |
           npm run all
 
-      - name: Git Auto Commit
-        # only on main (won't work on branch as dependabot doesn't get token to commit)
-        if: ${{ github.ref == 'refs/heads/main' }}
-        uses: stefanzweifel/git-auto-commit-action@v4.11.0
-
       - name: Create Pull Request
-        # You may pin to the exact commit or the version.
-        # uses: peter-evans/create-pull-request@9825ae65b1cb54b543b938503728b432a0176d29
+        # if: ${{ github.ref == 'refs/heads/main' }}
         uses: peter-evans/create-pull-request@v3.10.0

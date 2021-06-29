@@ -16,11 +16,6 @@ jobs:
       - run: |
           npm run all
 
-      - name: Git Auto Commit
-        # only on main (won't work on branch as dependabot doesn't get token to commit)
-        if: ${{ github.ref == 'refs/heads/main' }}
-        uses: stefanzweifel/git-auto-commit-action@v4.11.0
-
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
