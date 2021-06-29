@@ -15,3 +15,5 @@ jobs:
       - name: Create Pull Request
         # if: ${{ github.ref == 'refs/heads/main' }}
         uses: peter-evans/create-pull-request@v3.10.0
+        with:
+          token: ${{ secrets.PAT_REPO_FULL }}
