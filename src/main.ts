@@ -12,7 +12,9 @@ async function run(): Promise<void> {
 
     core.setOutput('time', `v1.3 ${new Date().toTimeString()}`)
   } catch (error) {
-    core.setFailed(error.message)
+    if (error instanceof Error) {
+      core.setFailed(error.message);
+    }
   }
 }
 
